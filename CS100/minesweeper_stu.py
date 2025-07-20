@@ -4,15 +4,22 @@ import random
 
 def create_board(size, num_bombs):
     # TODO: Create a size x size board filled with ' '
+    board = [[' ' for _ in range(size)] for _ in range(size)]
+    bombs = 0
+    while:
     # TODO: Randomly place '*' bombs on the board (num_bombs of them)
     pass
 
 def count_bombs(board, row, col):
     # TODO: Count the number of bombs around a given cell (8 neighbors)
+    count = 0
+    for i in range(max(0, row - 1), min(len(board), row + 2)):
+        for j in range(_____):
     pass
 
 def add_numbers(board):
     # TODO: For each cell that is not a bomb, count surrounding bombs and fill it in
+    size = len(board)
     pass
 
 def create_hidden_board(size):
@@ -20,7 +27,10 @@ def create_hidden_board(size):
     pass
 
 def print_board(board):
-    # TODO: Print the board in a user-friendly format with row/col labels
+    print("   " + " ".join([str(i) for i in range(len(board))]))
+    print("  " + "-" * (len(board) * 2))
+    for idx, row in enumerate(board):
+        print(f"{idx}| " + " ".join(row))
     pass
 
 def reveal_cell(board, hidden_board, row, col):
